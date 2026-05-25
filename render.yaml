@@ -4,8 +4,8 @@ services:
     env: php
     phpVersion: 8.3
     plan: free
-    buildCommand: composer install && npm install && npm run build && php artisan migrate:fresh --seed --force
-    startCommand: php -S 0.0.0.0:10000 -t public/ --preserve-settings
+    buildCommand: composer install && npm install && npm run build
+    startCommand: php -S 0.0.0.0:10000 -t public/
     envVars:
       - key: APP_ENV
         value: production
@@ -41,7 +41,7 @@ services:
         value: file
       - key: QUEUE_CONNECTION
         value: sync
-    preDeployCommand: php artisan config:cache && php artisan route:cache
+    preDeployCommand: php artisan migrate --force && php artisan seed --force && php artisan config:cache && php artisan route:cache
 
 databases:
   - name: pre-enrollment-db
