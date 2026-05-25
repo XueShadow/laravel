@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+storage/logs/*
+!storage/logs/.gitkeep
+bootstrap/cache/*
+!bootstrap/cache/.gitkeep
+.env.local
+.git
+.gitignore
+.vscode
+.editorconfig
+README.md

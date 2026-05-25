@@ -5,7 +5,7 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
-        "start": "php -S 0.0.0.0:10000 -t public/"
+        "start": "npm run build"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
